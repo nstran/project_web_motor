@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/footer.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/user-detail.css}"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>User Detail</title>
+</head>
+<body>
+<div th:replace="fragments/header :: header_info (vm=${vm.getLayoutHeaderVM()})"></div>
+
+<!--Slider-->
+<section class="breadcrumb-area bg">
+    <div class="page-title-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text text-center">
+                        <h2>User detail</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container" style="margin: 60px 0">
+    <form th:action="@{/user/update}" th:object="${user}" method="post" id="myForm">
+        <fieldset>
+            <div class="row">
+                <!-- Avatar -->
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="column-avatar">
+                        <div class="avatar-image text-center">
+                            <img th:if="*{avatar}" th:src="*{avatar}" class="user-avatar">
+                        </div>
+                        <div class="avatar-image text-center">
+                            <img th:unless="*{avatar}" src="" class="user-avatar">
+                        </div>
+                        <div style="text-align: center; margin-top: 20px">
+                            <input type='file' id="input-avatar" />
+                        </div>
+                        <input type="text" id="avatar" th:field="*{avatar}" style="display: none">
+                    </div>
+                </div>
+
+                <!-- User-detail -->
+
+                <div class="col-md-8 col-sm-12 col-xs-12">
+                    <div class="user-detail">
+                        <h3>Thông tin người dùng</h3>
+                        <div th:if="${param.updateSuccess}">
+                            <div class="alert alert-primary">
+                                Cập nhật thành công !!
+                            </div>
+                        </div>
+                        <div th:if="${param.updateFail}">
+                            <div class="alert alert-danger">
+                                Cập nhật thất bại !!
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Tên :</label>
+                            <input type="text" class="form-control" id="name" th:field="*{name}" name="name" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email :</label>
+                            <input type="email" class="form-control" id="email" th:field="*{email}" name="email" />
+                        </div>
+                        <div class="form-group text-center">
+                            <label>Giới tính :</label>
+                            <select th:field="*{gender}">
+                                <option value="0">Chưa xác định</option>
+                                <option value="1">Nam</option>
+                                <option value="2">Nữ</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Địa chỉ :</label>
+                            <input type="text" class="form-control" id="address" th:field="*{address}" name="address" />
+                        </div>
+                        <div class="form-group">
+                            <label>Số điện thoại :</label>
+                            <input type="text" class="form-control" id="phoneNumber" th:field="*{phoneNumber}" name="phoneNumber" />
+                        </div>
+                        <div class="form-group">
+                            <label>Chứng minh thư :</label>
+                            <input type="text" class="form-control" id="cmnd" th:field="*{cmnd}" name="cmnd" />
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <button class="btn btn-primary" type="submit">Cập nhật</button>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <a class="btn btn-success" th:href="@{'/user/change-password'}" role="button">Đổi mật khẩu</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+</div>
+
+
+<div th:replace="fragments/footer :: footer_info"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.9.0/sweetalert2.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+<script th:src="@{/js/user-detail.js}"></script>
+<script th:src="@{/js/header.js}"></script>
+<script th:src="@{/js/footer.js}"></script>
+
+</body>
+</html>

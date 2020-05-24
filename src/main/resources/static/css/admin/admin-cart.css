@@ -1,0 +1,15 @@
+.check-out {
+    color: white;
+    background: #080808;
+}
+
+.delete-cart-product {
+    cursor: pointer;
+    border: none;
+    padding: 8px;
+    font-size: 22px;
+}
+
+.table td, .table th {
+    border: 1px solid #ebedf2 !important;
+}

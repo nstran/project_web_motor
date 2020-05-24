@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/register.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <title>Register</title>
+
+</head>
+<body>
+<!--Register-->
+
+<div class="register">
+    <div class="register-form">
+        <form class="register-content animate" th:action="@{/register-user}" th:object="${user}" method="post">
+            <div class="container">
+
+                <div class="container">
+                    <h2>Đăng ký</h2>
+
+                    <label for="username"><b>Tên đăng nhập</b></label>
+                    <input type="text" id="username" th:field="*{userName}" name="username" placeholder="Tên đăng nhập" required="true" />
+
+                    <label for="password"><b>Mật khẩu</b></label>
+                    <input type="password" placeholder="Mật khẩu" id="password" th:field="*{password}" name="password" required="true"/>
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="email" placeholder="Email" id="email" th:field="*{email}" name="email" />
+
+                    <button type="submit">Đăng ký</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

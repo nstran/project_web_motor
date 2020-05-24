@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.breadcrumb-area {
+    padding: 150px 0;
+    margin-top: 50px;
+}
+
+.breadcrumb-area.bg-3 {
+    background-attachment: scroll;
+    background-clip: initial;
+    background-color: rgba(0, 0, 0, 0);
+    background-origin: initial;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.breadcrumb-area.bg-3 {
+    background-image: url(https://images3.alphacoders.com/274/thumb-1920-274855.jpg);
+}
+
+.breadcrumb-area .breadcrumb-text {
+    position: relative;
+    padding: 18px 60px;
+    display: table;
+    border: 1px solid #ffffff;
+    z-index: 1;
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.breadcrumb-area .breadcrumb-text h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px 0;
+}
+
+.news {
+    padding: 40px 0;
+}
+
+.news .row .col-sm-4 {
+    padding: 10px 15px;
+}
+
+.news .title-news .title {
+    background: #ed1b2f;
+    border-color: #ed1b2f;
+    color: #fff;
+    font-size: 25px;
+    padding: 10px 5px;
+    width: 25%;
+    text-align: center;
+}
+
+.news .news-content {
+    position: relative;
+    display: block;
+}
+
+.news .news-content .news-image img {
+    width: 100%;
+}
+
+.news .news-content .news-title {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 5px 32px 5px 10px;
+}
+
+.news .news-content .news-title::before {
+    position: absolute;
+    font-family: 'FontAwesome';
+    content: "\f054";
+    font-size: 20px;
+    right: 3%;
+    top: 33.33%;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.news .news-content .news-title:hover:before {
+    right: 1%;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+@media screen and (max-width: 992px) {
+    .news .title-news .title {
+        font-size: 18px !important;
+        width: 50% !important;
+    }
+}
+
+
+/*# sourceMappingURL=news.css.map */

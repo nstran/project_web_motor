@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/footer.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div th:fragment="footer_info">
+
+    <!-- FOOTER -->
+    <footer class="bg-dark">
+        <div class="container-fluid menu-footer">
+            <div class="row row-footer">
+                <div class="col-md-4">
+                    <aside>
+                        <a class="logo-footer" href="/">
+                            <span>t</span>
+                            <span>h</span>
+                            <span>u</span>
+                            <span>ậ</span>
+                            <span>n</span>
+                            <span>Đ</span>
+                            <span>ứ</span>
+                            <span>c</span>
+                        </a>
+                        <div class="footer-list">
+                            <p>Địa chỉ : DHCN Hà Nội</p>
+                            <p><i class="fa fa-phone"></i> &nbsp; Sdt : 123456789</p>
+                            <p><i class="fa fa-envelope"></i> &nbsp; <a href="" class=""> Email : 123@gmail.com </a></p>
+                            <p><i class="fa fa-fax"></i> &nbsp;Fax : ... </p>
+                        </div>
+                    </aside>
+                    <div class="footer-links">
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="google"><i class="fa fa-google"></i></a>
+                        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                        <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div style="padding-top: 10px;" class="col-md-4">
+                    <aside class="about-us">
+                        <h4 style="padding-bottom: 12px;">Giới thiệu</h4>
+                        <a href="">
+                            <p>Về chúng tôi</p>
+                        </a>
+                        <a href="">
+                            <p>Liên hệ</p>
+                        </a>
+                        <a th:href="@{/news}">
+                            <p>Tin tức</p>
+                        </a>
+                        <a href="">
+                            <p>Hỗ trợ</p>
+                        </a>
+                        <a href="">
+                            <p>Bản đồ</p>
+                        </a>
+                    </aside>
+                </div>
+
+                <div style="padding-top: 10px;" class="col-md-4">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <aside class="latest-news">
+                                <h4>Bản đồ</h4>
+                                <div class="map">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.472089564839!2d105.73227131440777!3d21.053798892300122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313455af9072ccf9%3A0xadb5f7555c46683d!2zxJDhuqFpIEjhu41jIEPDtG5nIE5naGnhu4dwIEjDoCBO4buZaQ!5e0!3m2!1svi!2s!4v1577712209491!5m2!1svi!2s"
+                                            width="200" height="180" frameborder="0" style="border:0;"
+                                            allowfullscreen=""></iframe>
+                                </div>
+                            </aside>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="visit" style="margin-top: 12px">
+                                <a href='https://www.symptoma.it/'>motore de ricerca medico</a>
+                                <script type='text/javascript'
+                                        src='https://www.freevisitorcounters.com/auth.php?id=499c85ef6b01fcab11990d79608715fa7149c675'></script>
+                                <script type="text/javascript"
+                                        src="https://www.freevisitorcounters.com/en/home/counter/633431/t/0"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- BACK TO TOP -->
+                <button id="back-to-top" title="go to top"><i class="fa fa-angle-double-up"></i></button>
+                <script type="text/javascript" src="https://ahachat.com/customer-chats/customer_chat_uscuvDF1tc5e1d3a46a14ae.js"></script>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                <p class=""> Copyright © ThuậnĐức 2019 All Rights Reserved | ThuậnĐức</p>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Home Admin page</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" th:href="@{/vendors/iconfonts/mdi/css/materialdesignicons.min.css}">
+    <link rel="stylesheet" th:href="@{/vendors/css/vendor.bundle.base.css}">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <!-- endinject -->
+    <link rel="shortcut icon" th:href="@{/images/favicon.png}"/>
+
+
+</head>
+<body>
+
+<div class="container-scroller">
+
+    <div th:replace="fragments/header_admin :: header_admin_info (vm=${vm.getLayoutHeaderAdminVM()})"></div>
+
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/product}">
+                        <span class="menu-title">Sản phẩm</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/category}">
+                        <span class="menu-title">Danh mục</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/order}">
+                        <span class="menu-title">Đơn hàng</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/news}">
+                        <span class="menu-title">Tin tức</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/chart}">
+                        <span class="menu-title">Biểu đồ thống kê</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/cart}">
+                        <span class="menu-title">Giỏ hàng</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="page-header">
+                    <h1>Quản lý sản phẩm</h1>
+                    <form class="form-inline my-2 my-lg-0" th:action="@{/admin/product}" th:object="${productname}"
+                          method="get">
+                        <input class="form-control mr-sm-2" th:field="*{name}" type="search" placeholder="Tìm kiếm"
+                               aria-label="Search">
+                        <button class="btn btn-primary" type="submit">Tìm kiếm</button>
+                    </form>
+                </div>
+                <h2 th:if="${vm.getKeyWord()}" th:text="${vm.getKeyWord()}"></h2>
+
+                <button type="button" class="btn btn-primary" id="new-product" data-toggle="modal"
+                        style="margin-bottom: 20px" data-target="#exampleModalLong">
+                    Thêm sản phẩm
+                </button>
+
+                <div class="col-lg-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="table table-bordered text-center">
+                                <thead>
+                                <tr>
+                                    <th colspan="1">
+                                        STT
+                                    </th>
+                                    <th colspan="1">
+                                        Tên
+                                    </th>
+                                    <th colspan="1">
+                                        Danh mục
+                                    </th>
+                                    <th colspan="1">
+                                        Thông tin
+                                    </th>
+                                    <th colspan="1">
+                                        Giá
+                                    </th>
+                                    <th colspan="1">
+                                        Số lượng
+                                    </th>
+                                    <th colspan="1">
+                                        Ngày tạo
+                                    </th>
+                                    <th colspan="1">
+                                        Tùy chọn
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="product : ${vm.getProductVMList()}">
+                                    <td colspan="1" th:text="${product.getId()}"></td>
+                                    <td colspan="1" th:text="${product.getName()}"></td>
+                                    <td colspan="1" th:text="${product.getCategoryName()}"></td>
+                                    <td colspan="1">
+                                        <div class="cut-text">
+                                            <div class="block-with-text" th:text="${product.getInfor()}"></div>
+                                        </div>
+                                    </td>
+                                    <td colspan="1" th:text="${product.getPrice() + ' VND'}"></td>
+                                    <td colspan="1" th:text="${product.getAmount()}"></td>
+                                    <td colspan="1" th:text="${product.getCreatedDate()}"></td>
+                                    <td colspan="1">
+                                        <i class="mdi mdi-brightness-7 tooltip-test edit-product"
+                                           th:attr="data-product = ${product.getId()}" data-toggle="modal"
+                                           title="Edit product" data-target="#exampleModalLong"
+                                           style="cursor: pointer"></i>
+                                        <a th:href="@{'/admin/product-image/' + ${product.getId()}}">
+                                            <i class="mdi mdi-folder-multiple-image tooltip-test"
+                                               title="List images"></i>
+                                        </a>
+                                        <a th:href="@{'/admin/product-detail/' + ${product.getId()}}">
+                                            <i class="fas fa-shopping-cart" title="Add to cart"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+                <nav style="margin-top: 50px" aria-label="..." th:if="${vm.getProductVMList().size()>0}">
+                    <ul class="pagination">
+                        <th:block th:each="i: ${#numbers.sequence(0, page.totalPages - 1)}">
+                            <li class="page-item active" th:if="${page.number == i}" aria-current="page">
+                                <a class="page-link" th:href="${''}" th:text="${i+1}"><span class="sr-only"></span></a>
+                            </li>
+                            <li class="page-item" th:unless="${page.number == i}"><a class="page-link" th:text="${i+1}"
+                                                                                     th:href="${'?'
+                                                                                       +('&page='+i)
+                                                                                       +(#httpServletRequest.getParameter('size')==null?'':('&size='+#httpServletRequest.getParameter('size')))
+                                                                                       +(#httpServletRequest.getParameter('name')==null?'':('&name='+#httpServletRequest.getParameter('name')))}"></a>
+                            </li>
+                        </th:block>
+                    </ul>
+                </nav>
+
+
+            </div>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Thêm / Cập nhật sản phẩm</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!--main-image-->
+                            <div style="text-align: center">
+                                <p class="text-center">Ảnh sản phẩm</p>
+                                <img style="max-width: 200px; height: auto"
+                                     src="https://www.vietnamprintpack.com/images/default.jpg"
+                                     class="product-main-image">
+                            </div>
+                            <div style="text-align: center; margin-top: 20px">
+                                <input type='file' id="change-product-mainImage"/>
+                            </div>
+                            <hr>
+
+                            <!--backgroundImage-->
+                            <div style="text-align: center">
+                                <p class="text-center">Ảnh nền sản phẩm</p>
+                                <img style="max-width: 200px; height: auto"
+                                     src="https://www.vietnamprintpack.com/images/default.jpg"
+                                     class="product-background-image">
+                            </div>
+
+                            <div style="text-align: center; margin-top: 20px">
+                                <input type='file' id="change-product-backgroundImage"/>
+                            </div>
+                            <hr>
+
+                            <div class="form-group margin-bottom-15" style="margin-top: 20px">
+                                <label>Tên sản phẩm:</label>
+                                <input type="text" class="form-control" id="input-product-name">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Danh mục:</label>
+                                <select class="form-control" id="input-product-category">
+                                    <option th:each="category : ${vm.getCategoryVMList()}"
+                                            th:value="${category.getId()}" th:text="${category.getName()}"></option>
+                                </select>
+                            </div>
+
+                            <div class="form-group margin-bottom-15">
+                                <label>Thông tin</label>
+                                <textarea type="text" class="form-control" id="input-product-infor"></textarea>
+                            </div>
+
+                            <div class="form-group margin-bottom-15" style="width: 100%">
+                                <label>Giá:</label>
+                                <input type="text" class="form-control" style="display: block; margin: 5px ;width: 100%"
+                                       id="input-product-price">
+                            </div>
+
+                            <div class="form-group margin-bottom-15" style="width: 100%">
+                                <label>Số lượng:</label>
+                                <input type="text" class="form-control" style="display: block; margin: 5px ;width: 100%"
+                                       id="input-product-amount">
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                            <button type="button" class="btn btn-primary btn-save-product">Lưu thay đổi</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class="footer" th:replace="fragments/footer_admin :: footer_admin_info"></footer>
+
+        </div>
+        <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.9.0/sweetalert2.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script th:src="@{/vendors/js/vendor.bundle.base.js}"></script>
+<script th:src="@{/vendors/js/vendor.bundle.addons.js}"></script>
+<script th:src="@{/js/off-canvas.js}"></script>
+<script th:src="@{/js/misc.js}"></script>
+
+<script th:src="@{/js/admin/admin-product.js}"></script>
+
+</body>
+</html>

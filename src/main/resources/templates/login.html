@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/login.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <title>Login</title>
+</head>
+<body>
+
+<!-- Login -->
+<div class="login">
+    <div class="container">
+        <div class="login-form">
+            <form class="login-content animate" th:action="@{/login}" method="post">
+                <div class="imgcontainer">
+                    <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
+                </div>
+                <div class="container">
+                    <h3>Đăng nhập</h3>
+                    <div th:if="${param.error}">
+                        <div class="alert alert-danger">
+                            Invalid username and password.
+                        </div>
+                    </div>
+                    <div th:if="${param.logout}">
+                        <div class="alert alert-info">
+                            You have been logged out.
+                        </div>
+                    </div>
+                    <div class="container">
+                        <label><b>Tên đăng nhập</b></label>
+                        <input type="text" name="username" id="username" placeholder="Tên đăng nhập" required="true" autofocus="true">
+                        <label><b>Mật khẩu</b></label>
+                        <input type="password" name="password" id="password" placeholder="Mật khẩu" required="true">
+                        <button type="submit">Đăng nhập</button>
+                        <label><input type="checkbox" checked="checked" name="remember-me" id="remember-me">Nhớ mật khẩu</label>
+                        <div class="">
+                            <p>Chưa có tài khoản ? <a class="" th:href="@{'/register'}" role="button"> Đăng ký !</a></p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

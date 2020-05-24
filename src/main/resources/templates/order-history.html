@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/footer.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/order-history.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>Order history</title>
+</head>
+<body>
+<div th:replace="fragments/header :: header_info (vm=${vm.getLayoutHeaderVM()})"></div>
+
+<section class="breadcrumb-area overlay-dark-2 bg-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text text-center">
+                    <h2>Lịch sử đặt hàng</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <h2 style="margin-top: 40px; margin-bottom: 30px">Lịch sử đặt hàng</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered text-center">
+            <thead>
+            <tr>
+                <th colspan="1">STT</th>
+                <th colspan="1">Tên khách hàng</th>
+                <th colspan="1">Email</th>
+                <th colspan="1">Địa chỉ</th>
+                <th colspan="1">Số điện thoại</th>
+                <th colspan="1">CMND</th>
+                <th colspan="1">Tổng tiền</th>
+                <th colspan="1">Ngày tạo</th>
+                <th colspan="1">Chi tiết</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="order,iter : ${vm.getOrderVMS()}">
+                <td colspan="1" th:text="${iter.index+1}"></td>
+                <td colspan="1" th:text="${order.getCustomerName()}"></td>
+                <td colspan="1" th:text="${order.getEmail()}"></td>
+                <td colspan="1" th:text="${order.getAddress()}"></td>
+                <td colspan="1" th:text="${order.getPhoneNumber()}"></td>
+                <td colspan="1" th:text="${order.getCmnd()}"></td>
+                <td colspan="1" th:text="${order.getPrice()}"></td>
+                <td colspan="1" th:text="${order.getCreatedDate()}"></td>
+                <td colspan="1">
+                    <a class="" th:href="@{'/order/history/'+${order.getId()}}"><i class="fas fa-info" title="Chi tiết"></i></a>
+                </td>
+
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div th:replace="fragments/footer :: footer_info"></div>
+
+<script th:src="@{/js/header.js}"></script>
+<script th:src="@{/js/footer.js}"></script>
+<script th:src="@{/js/order-history.js}"></script>
+
+</body>
+</html>

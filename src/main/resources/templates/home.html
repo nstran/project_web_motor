@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/footer.css}"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nivoslider/3.2/nivo-slider.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nivoslider/3.2/jquery.nivo.slider.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js "></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <title>Home page</title>
+</head>
+<body>
+
+<!--HEADER-->
+<div th:replace="fragments/header :: header_info (vm=${vm.getLayoutHeaderVM()})"></div>
+
+<!--Nivo silder-->
+<div class="section-nivo">
+    <section>
+        <div id="slider" class="nivoSlider">
+            <th:block th:each="banner: ${vm.getListBanners()}">
+                <img th:src="${banner.getImageUrl()}">
+            </th:block>
+        </div>
+    </section>
+</div>
+
+
+<!-- PRODUCT -->
+
+<div class="product">
+    <div class="container">
+        <h4 class="title-product text-center">Lựa chọn phong cách riêng cho bạn</h4>
+
+        <!-- SORT -->
+        <div class="sort-by">
+            <div class="container">
+                <div class="keyWord"><p th:if="${vm.getKeyWord()}" th:text="${vm.getKeyWord()}"></p></div>
+                <div class="sort-by-drop">
+                    <button class="button-sort" type="button" data-toggle="dropdown">Sắp xếp<i
+                            class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="sort-menu">
+                        <li>
+                            <a class="dropdown-item" th:href="${'?'+(#httpServletRequest.getParameter('categoryId')==null?'':('&categoryId='+#httpServletRequest.getParameter('categoryId')))
+                                                                                       +(#httpServletRequest.getParameter('page')==null?'':('&page='+#httpServletRequest.getParameter('page')))
+                                                                                       +(#httpServletRequest.getParameter('size')==null?'':('&size='+#httpServletRequest.getParameter('size')))
+                                                                                       +('&sortByPrice=ASC')
+                                                                                       +(#httpServletRequest.getParameter('name')==null?'':('&name='+#httpServletRequest.getParameter('name')))}">
+                                Giá tăng dần
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" th:href="${'?'+(#httpServletRequest.getParameter('categoryId')==null?'':('&categoryId='+#httpServletRequest.getParameter('categoryId')))
+                                                                                       +(#httpServletRequest.getParameter('page')==null?'':('&page='+#httpServletRequest.getParameter('page')))
+                                                                                       +(#httpServletRequest.getParameter('size')==null?'':('&size='+#httpServletRequest.getParameter('size')))
+                                                                                       +('&sortByPrice=DESC')
+                                                                                       +(#httpServletRequest.getParameter('name')==null?'':('&name='+#httpServletRequest.getParameter('name')))}">
+                                Giá giảm dần
+                            </a>
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--LIST PRODUCT-->
+
+        <div class="list-product">
+            <div class="row">
+                <div class="col-md-4" th:each="product : ${vm.getProductVMList()}">
+                    <a class="product-link" th:href="${'/product/'+product.getId()}">
+                        <div class="product-image">
+                            <img th:src="${product.getMainImage()}" alt="">
+                        </div>
+                        <div class="product-detail">
+                            <div class="product-name text-center">
+                                <p th:text="${product.getName()}"></p>
+                            </div>
+                            <div class="product-price text-center">
+                                <p>price: <span class="price" th:text="${product.getPrice()+' VND'}"></span></p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Page-->
+
+            <nav class="product-page" style="margin-top: 40px" aria-label="..."
+                 th:if="${vm.getProductVMList().size()>0}">
+                <ul class="pagination">
+                    <th:block th:each="i: ${#numbers.sequence(0, page.totalPages - 1)}">
+                        <li class="page-item active" th:if="${page.number == i}" aria-current="page">
+                            <a class="page-link" th:href="${''}" th:text="${i+1}"><span class="sr-only"></span></a>
+                        </li>
+                        <li class="page-item" th:unless="${page.number == i}"><a class="page-link" th:text="${i+1}"
+                                                                                 th:href="${'?'+(#httpServletRequest.getParameter('categoryId')==null?'':('&categoryId='+#httpServletRequest.getParameter('categoryId')))
+                                                                                       +('&page='+i)
+                                                                                       +(#httpServletRequest.getParameter('size')==null?'':('&size='+#httpServletRequest.getParameter('size')))
+                                                                                       +(#httpServletRequest.getParameter('sortByPrice')==null?'':('&sortByPrice='+#httpServletRequest.getParameter('sortByPrice')))
+                                                                                       +(#httpServletRequest.getParameter('name')==null?'':('&name='+#httpServletRequest.getParameter('name')))}"></a>
+                        </li>
+                    </th:block>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+<!--footer-->
+<div th:replace="fragments/footer :: footer_info"></div>
+
+<script th:src="@{/js/header.js}"></script>
+<script th:src="@{/js/home.js}"></script>
+<script th:src="@{/js/footer.js}"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+.table td, .table th {
+    border: 1px solid #ebedf2 !important;
+}
+
+.table th img, .table td img {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0px !important;
+}
+
+.infoCustomer {
+    margin: 10px auto;
+}
+
+.infoCustomer span {
+    font-weight: 700;
+}
+
+.print{
+    font-size: 22px;
+}
+
+@media print {
+    #printpagebutton {
+        display: none;
+    }
+}

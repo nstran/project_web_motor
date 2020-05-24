@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.login {
+    background-attachment: scroll;
+    background-clip: initial;
+    background-color: rgba(0, 0, 0, 0);
+    background-origin: initial;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.login {
+    background-image: url(http://tophinhnen.com/wp-content/uploads/2018/01/hinh-nen-sieu-xe-moto-24.jpg);
+}
+
+.login .login-form {
+    padding: 10px;
+}
+
+.login .login-form .login-content {
+    background-color: #fefefe;
+    margin: 7% auto;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+.login .login-form .login-content .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+.login .login-form .login-content .imgcontainer img.avatar {
+    width: 20%;
+    border-radius: 50%;
+}
+
+.login .login-form .login-content .container h3 {
+    padding: 0 0 10px 15px;
+}
+
+.login .login-form .login-content .container .container input[type=text],
+.login .login-form .login-content .container .container input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.login .login-form .login-content .container .container button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.login .login-form .login-content .container .container button:hover {
+    opacity: 0.8;
+}
+
+.login .login-form .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0);
+    }
+    to {
+        -webkit-transform: scale(1);
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    to {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .login-form {
+        padding: 10px;
+    }
+    .login-form .login-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        border: 1px solid #888;
+        width: 100% !important;
+    }
+}
+/*# sourceMappingURL=login.css.map */

@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.register {
+    background-attachment: scroll;
+    background-clip: initial;
+    background-color: rgba(0, 0, 0, 0);
+    background-origin: initial;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.register {
+    background-image: url(http://tophinhnen.com/wp-content/uploads/2018/01/hinh-nen-sieu-xe-moto-24.jpg);
+}
+
+.register .register-form {
+    padding: 10px;
+}
+
+.register .register-form .register-content {
+    background-color: #fefefe;
+    margin: 6.5% auto;
+    border: 1px solid #888;
+    width: 40%;
+}
+
+.register .register-form .register-content .container {
+    padding: 15px;
+}
+
+.register .register-form .register-content .container .container h2 {
+    padding: 0 0 10px 0;
+}
+
+.register .register-form .register-content .container .container input[type=text],
+.register .register-form .register-content .container .container input[type=password],
+.register .register-form .register-content .container .container input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.register .register-form .register-content .container .container button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.register .register-form .register-content .container .container button:hover {
+    opacity: 0.8;
+}
+
+.register .register-form .animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s;
+}
+
+@-webkit-keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0);
+    }
+    to {
+        -webkit-transform: scale(1);
+    }
+}
+
+@keyframes animatezoom {
+    from {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    to {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .register-form {
+        padding: 10px;
+    }
+    .register-form .register-content {
+        background-color: #fefefe;
+        margin: 5% auto;
+        border: 1px solid #888;
+        width: 100% !important;
+    }
+}
+/*# sourceMappingURL=register.css.map */

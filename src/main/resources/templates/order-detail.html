@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/footer.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/order-detail.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Order Detail</title>
+</head>
+<body>
+<div th:replace="fragments/header :: header_info (vm=${vm.getLayoutHeaderVM()})"></div>
+
+
+<section class="breadcrumb-area overlay-dark-2 bg-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text text-center">
+                    <h2>Chi tiết đơn hàng</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <h3 style="margin-top: 30px">Tổng sản phẩm: <span th:text="${vm.getTotalProduct()}"></span></h3>
+    <div class="table-responsive">
+        <table class="table table-bordered text-center">
+            <thead>
+            <tr>
+                <th colspan="1">STT</th>
+                <th colspan="1">Ảnh</th>
+                <th colspan="1">Tên</th>
+                <th colspan="1">Số lượng</th>
+                <th colspan="1">Giá</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="orderProduct,iter : ${vm.getOrderProductVMS()}">
+                <td colspan="1" th:text="${iter.index+1}"></td>
+                <td colspan="1"><img style="width: auto; max-height: 250px;" th:src="${orderProduct.getMainImage()}"></td>
+                <td colspan="1"><a th:text="${orderProduct.getProductName()}"></a></td>
+                <td colspan="1" th:text="${orderProduct.getAmount()}"></td>
+                <td colspan="1" th:text="${orderProduct.getPrice()}+' VNĐ'"></td>
+                </td>
+            </tr>
+
+            </tbody>
+            <tfoot>
+            <tr>
+                <th colspan="4">Thành tiền</th>
+                <th colspan="1" style="color: red" th:text="${vm.getTotalPrice()}+' VNĐ'"></th>
+            </tr>
+            </tfoot>
+        </table>
+
+    </div>
+
+    <div style="margin: 10px 0; text-align: right">
+        <a class="btn btn-primary" th:href="@{'../../../'}" role="button">Trang chủ</a>
+    </div>
+</div>
+
+<div th:replace="fragments/footer :: footer_info"></div>
+
+<script th:src="@{/js/header.js}"></script>
+<script th:src="@{/js/footer.js}"></script>
+<script th:src="@{/js/order-detail.js}"></script>
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/css/header.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/footer.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/product-detail.css}"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js "></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <title>Product Detail</title>
+</head>
+<body>
+<div th:replace="fragments/header :: header_info (vm=${vm.getLayoutHeaderVM()})"></div>
+
+<!--Slider-->
+<section class="breadcrumb-area bg"
+         th:style="'background-image:url(' + ${vm.getProductVM().getBackgroundImage()} + ')'">
+    <div class="page-title-overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="breadcrumb-text text-center">
+                    <h2 th:text="${vm.getProductVM().getName()}"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BODY -->
+<div class="product-detail">
+    <div class="design">
+        <div class="container">
+            <div class="title-product text-center">
+                <h4 class="title">Đặc tính nổi bật</h4>
+            </div>
+            <div class="product-design">
+                <div class="title">Thiết kế</div>
+                <div class="list-product-design">
+                    <div class="row">
+                        <div class="col-md-3" th:each=" productImg : ${vm.getProductVM().getProductImageVMS()}">
+                            <div class="product-design-image">
+                                <img th:src="${productImg.getLinkDesign()}" alt="">
+                            </div>
+                            <div class="product-design-infor">
+                                <div class="infor" data-th-utext="*{productImg.getContentDesign()}"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="infor" th:each=" productImg : ${vm.getProductVM().getProductImageVMS()}">
+                    <div data-th-utext="*{productImg.getProductInfor()}"></d>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--infor-->
+    <div class="product-infor">
+        <div class="container">
+            <h3 class="title">Thông số kỹ thuật</h3>
+            <!--infor product-->
+            <div class="content-infor" data-th-utext="*{vm.getProductVM().getInfor()}"></div>
+        </div>
+    </div>
+
+    <!--library-->
+    <div class="library">
+        <div class="container">
+            <h3 class="title">Thư viện</h3>
+            <div class="row">
+                <div class="col-md-3" th:each=" productImg : ${vm.getProductVM().getProductImageVMS()}">
+                    <div class="library-image">
+                        <img th:src="${productImg.getLinkLibrary()}" alt="">
+                    </div>
+                    <div class="color-name text-center">
+                        <p th:text="${productImg.getColorName()}"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SELECT PRODUCT -->
+    <div class="select-product">
+        <div class="container">
+            <h3 class="select-color">Tùy chọn</h3>
+            <div class="owl-carousel owl-theme">
+                <div class="item" th:each=" productImg : ${vm.getProductVM().getProductImageVMS()}">
+                    <img th:src="${productImg.getLinkProductOption()}" alt="">
+                </div>
+            </div>
+            <div class="product-price text-center">
+                <p class="title">Giá bán đề xuất</p>
+                <p class="price" th:text="${vm.getProductVM().getPrice()} + ' VND'"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- logo-maintenance -->
+    <div class="maintenance-information">
+        <div class="container">
+            <h3 class="title">Thông tin bảo hành</h3>
+            <div class="row">
+                <div class="main-image">
+                    <img src="/images/image_logo_motor.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--contact-->
+    <div class="contact">
+        <div class="container">
+            <div class="text-center">
+                <p class="contact-gmail">Gửi mail về địa chỉ <span> thuanduc@gmail.com.vn</span></p>
+                <p class="contact-hotline">Hoặc gọi Hotline hỗ trợ để được tư vấn về sản phẩm, dịch vụ : <span>0123456789</span>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<div th:replace="fragments/footer :: footer_info"></div>
+
+<script th:src="@{/js/product-detail.js}"></script>
+<script th:src="@{/js/footer.js}"></script>
+<script th:src="@{/js/header.js}"></script>
+</body>
+</html>

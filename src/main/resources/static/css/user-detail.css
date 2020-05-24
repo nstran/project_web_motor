@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.breadcrumb-area {
+    padding: 230px 0px;
+}
+
+.bg {
+    background-image: url(https://www.honda.com.vn/asserts/images/honda-motor/motor-detail/monkey/design/banner.jpg);
+}
+
+.bg {
+    background-attachment: scroll;
+    background-clip: initial;
+    background-color: rgba(0, 0, 0, 0);
+    background-origin: initial;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.bg .page-title-overlay {
+    content: "";
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background-color: rgba(189, 189, 189, 0.22);
+    opacity: .3;
+}
+
+.breadcrumb-area .breadcrumb-text {
+    position: relative;
+    padding: 18px 60px;
+    display: table;
+    border: 1px solid #fff;
+    z-index: 1;
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.breadcrumb-area .breadcrumb-text h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px 0;
+}
+
+.container .column-avatar {
+    padding: 20px;
+}
+
+.container .column-avatar .avatar-image img {
+    width: 100%;
+}
+/*# sourceMappingURL=user-detail.css.map */

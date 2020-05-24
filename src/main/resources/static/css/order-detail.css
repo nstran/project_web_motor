@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.breadcrumb-area {
+    padding: 150px 0px;
+    margin-top: 50px;
+}
+
+.breadcrumb-area .breadcrumb-text {
+    position: relative;
+    padding: 18px 60px;
+    display: table;
+    border: 1px solid #fff;
+    z-index: 1;
+    text-align: center;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+.breadcrumb-area .breadcrumb-text h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 10px 0;
+}
+
+.breadcrumb-area.bg-3 {
+    background-attachment: scroll;
+    background-clip: initial;
+    background-color: rgba(0, 0, 0, 0);
+    background-origin: initial;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.breadcrumb-area.bg-3 {
+    background-image: url(https://images3.alphacoders.com/274/thumb-1920-274855.jpg);
+}

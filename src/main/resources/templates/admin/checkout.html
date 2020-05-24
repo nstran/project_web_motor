@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="./css/form-validation.css" rel="stylesheet">
+
+    <title>Checkout example for Bootstrap</title>
+</head>
+<body class="bg-light">
+
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>Checkout form</h2>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 order-md-1">
+            <form method="post" th:object="${order}" th:action="@{/admin/admin-checkout}" class="needs-validation">
+
+                <div class="mb-3">
+                    <label for="username">Tên đăng nhập</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="userName" placeholder="Tên đăng nhập" th:field="*{userName}">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="username">Tên khách hàng</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="customerName" placeholder="Tên khách hàng" th:field="*{customerName}">
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email">Email </label>
+                    <input type="email" class="form-control" id="email" th:field="*{email}" placeholder="you@example.com">
+                    <div class="invalid-feedback">
+                        Please enter a valid email address for shipping updates.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label>Số điện thoại</label>
+                    <input type="text" class="form-control" id="phoneNumber" placeholder="Số điện thoại" th:field="*{phoneNumber}">
+                </div>
+
+                <div class="mb-3">
+                    <label for="address">Địa chỉ </label>
+                    <input type="text" class="form-control" id="address" placeholder="Địa chỉ giao hàng" th:field="*{address}">
+                </div>
+
+                <div class="mb-3">
+                    <label>Chứng minh thư</label>
+                    <input type="text" class="form-control" id="passport" placeholder="Số chứng minh thư" th:field="*{cmnd}">
+                </div>
+
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Tạo hóa đơn</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">&copy; 2019-2020 Thuận Đức</p>
+    </footer>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js"></script>
+
+</body>
+</html>

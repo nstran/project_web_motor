@@ -1,0 +1,711 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 9990;
+}
+
+.header .menu-heder {
+    width: 100%;
+    padding: 0 60px;
+}
+
+.header .menu-heder .logo {
+    display: block;
+    color: #0ee00e;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -3px;
+    font-style: italic;
+}
+
+.header .menu-heder .logo:hover {
+    text-decoration: none;
+}
+
+.header .menu-heder .logo span {
+    margin: 0;
+    padding: 0;
+    -webkit-animation: animate 1s linear infinite;
+    animation: animate 1s linear infinite;
+}
+
+.header .menu-heder .logo span:nth-child(1) {
+    font-size: 40px;
+    -webkit-animation-delay: 0;
+    animation-delay: 0;
+    font-family: Georgia;
+}
+
+.header .menu-heder .logo span:nth-child(2) {
+    -webkit-animation-delay: 0.11s;
+    animation-delay: 0.11s;
+    font-family: Georgia;
+    font-size: 25px;
+}
+
+.header .menu-heder .logo span:nth-child(3) {
+    -webkit-animation-delay: 0.22s;
+    animation-delay: 0.22s;
+    font-family: Georgia;
+    font-size: 25px;
+}
+
+.header .menu-heder .logo span:nth-child(4) {
+    -webkit-animation-delay: 0.33s;
+    animation-delay: 0.33s;
+    font-family: Georgia;
+    font-size: 25px;
+}
+
+.header .menu-heder .logo span:nth-child(5) {
+    -webkit-animation-delay: 0.44s;
+    animation-delay: 0.44s;
+    font-family: Georgia;
+    font-size: 25px;
+}
+
+.header .menu-heder .logo span:nth-child(6) {
+    font-size: 35px;
+    -webkit-animation-delay: 0.55s;
+    animation-delay: 0.55s;
+}
+
+.header .menu-heder .logo span:nth-child(7) {
+    -webkit-animation-delay: 0.66s;
+    animation-delay: 0.66s;
+}
+
+.header .menu-heder .logo span:nth-child(8) {
+    -webkit-animation-delay: 0.77s;
+    animation-delay: 0.77s;
+}
+
+.header .menu-heder .logo span:nth-child(9) {
+    -webkit-animation-delay: 0.88s;
+    animation-delay: 0.88s;
+}
+
+.header .menu-heder .logo span:nth-child(10) {
+    -webkit-animation-delay: 0.99s;
+    animation-delay: 0.99s;
+}
+
+.header .menu-heder .logo-reponsive {
+    display: none;
+    color: #0ee00e;
+    font-size: 22px;
+}
+
+.header .menu-heder .logo-reponsive:hover {
+    text-decoration: none;
+}
+
+.header .menu-heder .logo-reponsive span {
+    margin: 0;
+    padding: 0;
+    -webkit-animation: animate 1s linear infinite;
+    animation: animate 1s linear infinite;
+}
+
+.header .menu-heder .logo-reponsive span:nth-child(1) {
+    font-size: 35px;
+    -webkit-animation-delay: 0;
+    animation-delay: 0;
+    font-family: Georgia;
+}
+
+.header .menu-heder .logo-reponsive span:nth-child(2) {
+    -webkit-animation-delay: 0.11s;
+    animation-delay: 0.11s;
+    font-family: Georgia;
+    font-size: 25px;
+}
+
+.header .menu-heder .logo-reponsive span:nth-child(3) {
+    -webkit-animation-delay: 0.22s;
+    animation-delay: 0.22s;
+    font-family: Georgia;
+    font-size: 25px;
+}
+
+.header .menu-heder .logo-reponsive span:nth-child(4) {
+    -webkit-animation-delay: 0.33s;
+    animation-delay: 0.33s;
+    font-family: Georgia;
+    font-size: 25px;
+}
+
+.header .menu-heder .logo-reponsive span:nth-child(5) {
+    -webkit-animation-delay: 0.44s;
+    animation-delay: 0.44s;
+    font-family: Georgia;
+    font-size: 25px;
+}
+
+.header .menu-heder .logo-reponsive span:nth-child(6) {
+    font-size: 30px;
+    -webkit-animation-delay: 0.55s;
+    animation-delay: 0.55s;
+}
+
+.header .menu-heder .logo-reponsive span:nth-child(7) {
+    -webkit-animation-delay: 0.66s;
+    animation-delay: 0.66s;
+}
+
+.header .menu-heder .logo-reponsive span:nth-child(8) {
+    -webkit-animation-delay: 0.77s;
+    animation-delay: 0.77s;
+}
+
+.header .menu-heder .logo-reponsive span:nth-child(9) {
+    -webkit-animation-delay: 0.88s;
+    animation-delay: 0.88s;
+}
+
+.header .menu-heder .logo-reponsive span:nth-child(10) {
+    -webkit-animation-delay: 0.99s;
+    animation-delay: 0.99s;
+}
+
+.header .menu-heder .menu-link {
+    margin-left: 5%;
+}
+
+.header .menu-heder .menu-link .nav-item .nav-link {
+    color: #fff;
+    display: block;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.header .menu-heder .menu-link .nav-item .nav-link i {
+    padding: 0 0 0 5px;
+}
+
+.header .menu-heder .menu-link .drop-category:hover .menu {
+    display: block;
+}
+
+.header .menu-heder .menu-link .drop-category .category {
+    outline: none;
+    display: block;
+    position: relative;
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    padding: 20px 0 20px 20px;
+    color: #fff;
+    float: right;
+}
+
+.header .menu-heder .menu-link .drop-category .category i {
+    margin-left: 4px;
+}
+
+.header .menu-heder .menu-link .drop-category .menu {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 160px;
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    left: 60%;
+    top: 100%;
+}
+
+.header .menu-heder .menu-link .drop-category .menu li {
+    width: 100%;
+    padding: 10px 10px;
+    list-style-type: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.header .menu-heder .menu-link .drop-category .menu li a {
+    display: block;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 5px 10px !important;
+    text-decoration: none;
+    font-size: 13px;
+    color: #111;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.header .menu-heder .menu-link .drop-category .menu li:hover {
+    background: #ddd !important;
+}
+
+.header .menu-heder .menu-link .form-inline .drop-login-register {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.header .menu-heder .menu-link .form-inline .drop-login-register:hover .menu {
+    display: block;
+}
+
+
+.header .menu-heder .menu-link .form-inline .drop-login-register .avatar .image-avatar {
+    padding-left: 5px;
+}
+
+.header .menu-heder .menu-link .form-inline .drop-login-register .avatar .image-avatar span {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    border: 1px solid #ffffff;
+    bottom: 5px;
+    right: 20%;
+    background: #1bcfb4;
+}
+
+.header .menu-heder .menu-link .form-inline .drop-login-register .avatar .image-avatar img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.header .menu-heder .menu-link .form-inline .drop-login-register .avatar .user-name-logged p {
+    padding: 10px 5px;
+    font-size: 16px;
+}
+
+.header .menu-heder .menu-link .form-inline .drop-login-register .avatar .user-name-logged p:before {
+    position: absolute;
+    width: 100%;
+    right: -38%;
+    font-family: "Font Awesome 5 Free";
+    font-size: 18px;
+    font-weight: 900;
+    content: "\f0d7";
+}
+.header .menu-heder .menu-link .form-inline .drop-login-register .logged {
+    outline: none;
+    display: block;
+    position: relative;
+    font-size: 20px;
+    padding: 10.5px 0 10.5px 25px !important;
+    background: transparent;
+    border: none;
+    color: #fff;
+    float: right;
+}
+
+.header .menu-heder .menu-link .form-inline .drop-login-register .drop-login {
+    outline: none;
+    display: block;
+    position: relative;
+    font-size: 20px;
+    padding: 20px 0 20px 40px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    float: right;
+}
+
+.header .menu-heder .menu-link .form-inline .drop-login-register .drop-login i {
+    margin-left: 4px;
+}
+
+.header .menu-heder .menu-link .form-inline .drop-login-register .menu {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    width: 160px;
+    -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    left: 83%;
+    top: 100%;
+}
+
+.header .menu-heder .menu-link .form-inline .drop-login-register .menu button {
+    width: 100% !important;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    font-weight: 700;
+    padding: 10px !important;
+    display: block;
+    color: #111;
+    height: auto !important;
+    text-transform: none;
+    border: none;
+    outline: none;
+}
+
+.header .menu-heder .menu-link .form-inline .drop-login-register .menu button:hover {
+    background: #ddd !important;
+}
+
+.header .menu-heder .menu-link .form-inline .drop-login-register .menu li {
+    width: 100%;
+    padding: 10px 10px;
+    list-style-type: none;
+    border-bottom: 1px solid #ddd;
+}
+
+.header .menu-heder .menu-link .form-inline .drop-login-register .menu li a {
+    cursor: pointer;
+    font-weight: 700;
+    padding: 5px 10px !important;
+    text-decoration: none;
+    display: block;
+    font-size: 15px;
+    color: #111;
+    height: auto !important;
+    text-transform: none;
+}
+
+.header .menu-heder .menu-link .form-inline .drop-login-register .menu li:hover {
+    background: #ddd !important;
+}
+
+.header .menu-heder .menu-link .search-container {
+    position: relative;
+    right: 0;
+    padding: 15px 10px 15px 25px;
+}
+
+.header .menu-heder .menu-link .search-container input {
+    width: 120px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    outline: none;
+    border: none;
+}
+
+.header .menu-heder .menu-link .search-container button {
+    position: absolute;
+    background: none;
+    border: none;
+    right: 10px;
+    font-size: 20px;
+    padding: 5px;
+    outline: none;
+}
+
+.header .menu-responsive {
+    display: none;
+    width: 100%;
+    padding: 3px 0;
+}
+
+.header .icon-menu {
+    display: none;
+}
+
+.header .icon-menu .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.header .icon-menu .openbtn :hover {
+    background-color: #444;
+}
+
+.header .icon-search {
+    float: right;
+    margin-right: 5px;
+}
+
+.header .icon-search .search {
+    font-size: 22px;
+    cursor: pointer;
+    color: white;
+    padding: 5px;
+    border: none;
+    float: right;
+}
+
+.header .sidepanel {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translatex(-100%);
+    transform: translatex(-100%);
+    opacity: 0.98;
+    background: -webkit-gradient(linear, left top, left bottom, from(#333145), to(#b8333e));
+    background: linear-gradient(to bottom, #333145 0%, #b8333e 100%);
+    overflow-x: hidden;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 10;
+}
+
+.header .sidepanel li {
+    list-style-type: none;
+}
+
+.header .sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none !important;
+    font-size: 20px;
+    color: #fff;
+    display: block;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.header .sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+
+.header .sidepanel .closebtn:hover {
+    text-decoration: none;
+    color: red;
+}
+
+.header .sidepanel .category {
+    position: relative;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    color: #fff;
+}
+
+.header .sidepanel .category i {
+    position: absolute;
+    top: 20px;
+    right: 39%;
+    font-size: 14px;
+}
+
+.header .sidepanel .category .down {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.header .sidepanel .category:hover.sub-menu {
+    display: block;
+}
+
+.header .sidepanel .rotate {
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.header .sidepanel .sub-menu {
+    display: none;
+    padding-left: 20px;
+}
+
+.header .sidepanel .sub-menu li a {
+    font-size: 16px;
+}
+
+.header .sidepanel .show {
+    display: block !important;
+}
+
+.header .sidepanel .login-responsive {
+    cursor: pointer;
+}
+
+.header .sidepanel .login-responsive .login .avatar {
+    width: 120px;
+    height: 120px;
+}
+
+.header .sidepanel .login-responsive .login .avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.header .sidepanel .login-responsive .login .avatar span {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    border-radius: 100%;
+    border: 1px solid #ffffff;
+    bottom: 30px;
+    right: 0;
+    background: #1bcfb4;
+}
+
+.header .sidepanel .login-responsive .login .login-link {
+    padding: 20px 0;
+}
+
+.header .sidepanel .login-responsive .login .login-link span i {
+    padding-left: 15px;
+    font-size: 15px;
+}
+
+.header .searchResponsive {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translatex(100%);
+    transform: translatex(100%);
+    opacity: 0.98;
+    background: -webkit-gradient(linear, left top, left bottom, from(#333145), to(#b8333e));
+    background: linear-gradient(to bottom, #333145 0%, #b8333e 100%);
+    overflow-x: hidden;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    padding-top: 60px;
+    z-index: 10;
+}
+
+.header .searchResponsive .closebtn {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    font-size: 36px;
+    color: #fff;
+}
+
+.header .searchResponsive .closebtn:hover {
+    text-decoration: none;
+    color: red;
+}
+
+.header .searchResponsive form {
+    width: 100%;
+}
+
+.header .searchResponsive .title-search {
+    width: 100%;
+    color: #fff;
+    padding: 0 0 20px 0;
+}
+
+.header .searchResponsive input[type=text] {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    color: #fff;
+    font-size: 22px;
+    margin: 8px 0;
+    text-align: center;
+    height: 40px;
+}
+
+
+@-webkit-keyframes animate {
+    0%,
+    100% {
+        color: #0ee00e;
+        -webkit-filter: blur(2px);
+        filter: blur(2px);
+        text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff, 0 0 200px #00b3ff, 0 0 300px #00b3ff, 0 0 400px #00b3ff;
+    }
+    5%,
+    95% {
+        color: linear-gradient(to bottom, #0ee00e 0%, #b8333e 100%);
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        text-shadow: none;
+        text-shadow: 0 0 10px none;
+    }
+}
+
+@keyframes animate {
+    0%,
+    100% {
+        color: #0ee00e;
+        -webkit-filter: blur(2px);
+        filter: blur(2px);
+        text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff, 0 0 80px #00b3ff, 0 0 120px #00b3ff, 0 0 200px #00b3ff, 0 0 300px #00b3ff, 0 0 400px #00b3ff;
+    }
+    5%,
+    95% {
+        color: linear-gradient(to bottom, #0ee00e 0%, #b8333e 100%);
+        -webkit-filter: blur(0px);
+        filter: blur(0px);
+        text-shadow: none;
+        text-shadow: 0 0 10px none;
+    }
+}
+
+
+/*RESPONSIVE*/
+
+
+@media screen and (max-width: 992px) {
+    .header .header-col {
+        padding: 0 !important;
+    }
+    .header .menu-heder {
+        padding: 0;
+    }
+    .header .menu-heder .logo {
+        display: none;
+    }
+    .header .menu-heder .menu-link {
+        display: none !important;
+    }
+    .header .menu-heder .form-search {
+        display: none;
+    }
+    .header .menu-heder .menu-responsive {
+        display: block;
+        width: 100%;
+        padding: 3px 0;
+    }
+    .header .menu-heder .menu-responsive .icon-menu {
+        display: block !important;
+        float: left;
+        font-size: 20px;
+        padding: 5px 0 0 10px;
+    }
+    .header .menu-heder .menu-responsive .icon-menu .icon {
+        color: #fff;
+        padding: 5px 8px;
+        border: 1px solid #fff;
+    }
+    .header .menu-heder .menu-responsive .sidepanel li {
+        list-style-type: none;
+    }
+    .header .menu-heder .logo-reponsive {
+        display: block;
+        margin-top: -10px;
+        position: absolute;
+        float: right;
+        color: green;
+        font-family: Georgia;
+        font-weight: bold;
+        letter-spacing: -2.5px;
+        font-style: italic;
+        margin-left: 32%;
+    }
+    .section-nivo {
+        padding-top: 45px;
+    }
+}

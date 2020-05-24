@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Home Admin page</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/vendors/iconfonts/mdi/css/materialdesignicons.min.css}">
+    <link rel="stylesheet" th:href="@{/vendors/css/vendor.bundle.base.css}">
+    <!-- endinject -->
+    <!-- plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <!-- endinject -->
+    <link rel="shortcut icon" th:href="@{/images/favicon.png}"/>
+
+
+</head>
+<body>
+
+<div class="container-scroller">
+
+    <div th:replace="fragments/header_admin :: header_admin_info (vm=${vm.getLayoutHeaderAdminVM()})"></div>
+
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <!-- partial:../../partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/product}">
+                        <span class="menu-title">Sản phẩm</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/category}">
+                        <span class="menu-title">Danh mục</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/order}">
+                        <span class="menu-title">Đơn hàng</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/news}">
+                        <span class="menu-title">Tin tức</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/chart}">
+                        <span class="menu-title">Biểu đồ thống kê</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/admin/cart}">
+                        <span class="menu-title">Giỏ hàng</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="main-panel">
+            <div class="content-wrapper" style="padding: 0">
+                <div class="page-header">
+                    <h1 style="margin: 20px 0 0 20px">Quản lý ảnh sản phẩm</h1>
+                </div>
+
+                <button type="button" class="btn btn-primary" id="new-product-image" data-toggle="modal"
+                        style="margin: 0 0 20px 20px" data-target="#exampleModalLong">
+                    Thêm ảnh sản phẩm
+                </button>
+
+                <div class="col-lg-12 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body" style="padding: 1em">
+                            <table class="table table-bordered text-center">
+                                <thead>
+                                <tr>
+                                    <th colspan="1">
+                                        STT
+                                    </th>
+                                    <th colspan="1">
+                                        Ảnh thiết kế
+                                    </th>
+                                    <th colspan="1">
+                                        Thiết kế
+                                    </th>
+                                    <th colspan="1">
+                                        Giới thiệu
+                                    </th>
+                                    <th colspan="1">
+                                        Ảnh thư viện
+                                    </th>
+                                    <th colspan="1">
+                                        Màu
+                                    </th>
+                                    <th colspan="1">
+                                        Ảnh tùy chọn
+                                    </th>
+                                    <th colspan="1">
+                                        Ngày tạo
+                                    </th>
+                                    <th colspan="1">
+                                        Tùy chọn
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="image,iter : ${vm.getProductImageVMList()}">
+                                    <td colspan="1" th:text="${iter.index + 1}"></td>
+                                    <td colspan="1">
+                                        <div class="cut-text">
+                                            <div class="block-with-text" th:text="${image.getLinkDesign()}"></div>
+                                        </div>
+                                    </td>
+                                    <td colspan="1">
+                                        <div class="cut-text">
+                                            <div class="block-with-text" th:text="${image.getContentDesign()}"></div>
+                                        </div>
+                                    </td>
+                                    <td colspan="1">
+                                        <div class="cut-text">
+                                            <div class="block-with-text" th:text="${image.getProductInfor()}"></div>
+                                        </div>
+                                    </td>
+                                    <td colspan="1">
+                                        <div class="cut-text">
+                                            <div class="block-with-text" th:text="${image.getLinkLibrary()}"></div>
+                                        </div>
+                                    </td>
+                                    <td colspan="1">
+                                        <div class="cut-text">
+                                            <div class="block-with-text" th:text="${image.getColorName()}"></div>
+                                        </div>
+                                    </td>
+                                    <td colspan="1">
+                                        <div class="cut-text">
+                                            <div class="block-with-text"
+                                                 th:text="${image.getLinkProductOption()}"></div>
+                                        </div>
+                                    </td>
+                                    <td colspan="1" th:text="${image.getCreatedDate()}"></td>
+                                    <td colspan="1">
+                                        <i class="mdi mdi-brightness-7 tooltip-test edit-product-image"
+                                           th:attr="data-image = ${image.getId()}, data-product=${productId}"
+                                           data-toggle="modal"
+                                           title="Edit product images" data-target="#exampleModalLong"
+                                           style="cursor: pointer"></i>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Thêm / Cập nhật ảnh sản phẩm</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label>Sản phẩm:</label>
+                                <select class="form-control" id="input-product">
+                                    <option th:each="product : ${vm.getProductVMList()}"
+                                            th:value="${product.getId()}" th:text="${product.getName()}"></option>
+                                </select>
+                            </div>
+                            <div style="text-align: center">
+                                <p class="text-center">Ảnh thiết kế</p>
+                                <img style="max-width: 200px; height: auto"
+                                     src="https://www.vietnamprintpack.com/images/default.jpg"
+                                     class="product-link-design">
+                            </div>
+                            <div style="text-align: center; margin-top: 20px">
+                                <input type='file' id="change-product-image-design"/>
+                            </div>
+                            <hr>
+                            <div class="form-group margin-bottom-15" style="margin-top: 20px">
+                                <label>Nội dung thiết kế</label>
+                                <input type="text" class="form-control" id="input-content-design">
+                            </div>
+
+                            <div class="form-group margin-bottom-15" style="margin-top: 20px">
+                                <label>Thông tin sản phẩm</label>
+                                <input type="text" class="form-control" id="input-product-infor">
+                            </div>
+                            <hr>
+                            <div style="text-align: center">
+                                <p class="text-center">Ảnh thư viện</p>
+                                <img style="max-width: 200px; height: auto"
+                                     src="https://www.vietnamprintpack.com/images/default.jpg"
+                                     class="product-link-library">
+                            </div>
+                            <div style="text-align: center; margin-top: 20px">
+                                <input type='file' id="change-product-image-library"/>
+                            </div>
+                            <hr>
+                            <div class="form-group margin-bottom-15" style="margin-top: 20px">
+                                <label>Màu</label>
+                                <input type="text" class="form-control" id="input-color-name">
+                            </div>
+                            <hr>
+                            <div style="text-align: center">
+                                <p class="text-center">Ảnh tùy chọn</p>
+                                <img style="max-width: 200px; height: auto"
+                                     src="https://www.vietnamprintpack.com/images/default.jpg"
+                                     class="product-link-product-option">
+                            </div>
+                            <div style="text-align: center; margin-top: 20px">
+                                <input type='file' id="change-product-image-option"/>
+                            </div>
+                            <hr>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                            <button type="button" class="btn btn-primary btn-save-product-image">Lưu thay đổi</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class="footer" th:replace="fragments/footer_admin :: footer_admin_info"></footer>
+
+        </div>
+        <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.9.0/sweetalert2.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script th:src="@{/vendors/js/vendor.bundle.base.js}"></script>
+<script th:src="@{/vendors/js/vendor.bundle.addons.js}"></script>
+<script th:src="@{/js/off-canvas.js}"></script>
+<script th:src="@{/js/misc.js}"></script>
+
+<script th:src="@{/js/admin/admin-product-image.js}"></script>
+
+</body>
+</html>
