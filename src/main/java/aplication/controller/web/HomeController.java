@@ -55,12 +55,12 @@ public class HomeController extends BaseController {
          * set list bannerVM
          */
         ArrayList<BannerVM> listBanners = new ArrayList<>();
-        listBanners.add(new BannerVM("", "https://www.honda.com.vn/asserts/images/home/home_slide_16.jpg"));
-        listBanners.add(new BannerVM("", "https://www.honda.com.vn/asserts/images/home/home_slide_15.jpg"));
-        listBanners.add(new BannerVM("", "https://www.honda.com.vn/asserts/images/home/home_slide_06.jpg"));
-        listBanners.add(new BannerVM("", "https://www.honda.com.vn/asserts/images/home/home_slide_17.jpg"));
-        listBanners.add(new BannerVM("", "https://www.honda.com.vn/asserts/images/home/home_slide_01.jpg"));
-        listBanners.add(new BannerVM("", "https://www.honda.com.vn/asserts/images/home/home_slide_04.jpg"));
+        listBanners.add(new BannerVM("", "https://d1hznszuapp9mk.cloudfront.net/motorbikes/November2019/Ortg0zpI5eUnDLFb5ES5.jpg"));
+        listBanners.add(new BannerVM("", "https://d1hznszuapp9mk.cloudfront.net/motorbikes/November2019/8O4MPipndBN7tpYADJrj.jpg"));
+        listBanners.add(new BannerVM("", "https://d1hznszuapp9mk.cloudfront.net/motorbikes/November2019/7AEidqxKGaGpuQZP2buG.jpg"));
+        listBanners.add(new BannerVM("", "https://d1hznszuapp9mk.cloudfront.net/motorbikes/November2019/tKbK6Br6gm5Qt7LMGjb0.jpg"));
+        listBanners.add(new BannerVM("", "https://d1hznszuapp9mk.cloudfront.net/motorbikes/November2019/1CH7oQscZl7UIl8saOWn.jpg"));
+        listBanners.add(new BannerVM("", "https://d1hznszuapp9mk.cloudfront.net/motorbikes/November2019/peEKkzZWWo2PbF2lbIw4.jpg"));
 
         /**
          * set list categoryVM

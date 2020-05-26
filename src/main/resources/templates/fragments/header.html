@@ -25,14 +25,11 @@
                     <nav class="navbar navbar-expand-sm  menu-heder">
                         <!-- Brand/logo -->
                         <a class="logo" href="/">
+                            <span>M</span>
+                            <span>o</span>
                             <span>t</span>
-                            <span>h</span>
-                            <span>u</span>
-                            <span>ậ</span>
-                            <span>n</span>
-                            <span>Đ</span>
-                            <span>ứ</span>
-                            <span>c</span>
+                            <span>o</span>
+                            <span>r</span>
                         </a>
                         <!-- Links -->
                         <ul class="menu-link navbar-nav">
@@ -77,20 +74,16 @@
                                                 class="logged drop-login " type="button"
                                                 data-toggle="dropdown">
                                             <div class="avatar">
-                                                <div class="row">
-                                                    <div class="col-6">
-                                                        <div class="image-avatar">
-                                                            <img th:src="${vm.getAvatar()}">
-                                                            <span class="availability-status online"></span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <div class="user-name-logged">
-                                                            <p class="mb-1 text-black"
-                                                               th:text="${vm.getUserName()}"></p>
-                                                        </div>
+                                                <div class="avatar-image">
+                                                    <img th:src="${vm.getAvatar()}">
+                                                    <span class="availability-status online"></span>
+                                                </div>
+                                                <div class="avatar-name">
+                                                    <div class="user-name-logged">
+                                                        <p class="mb-1 text-black" th:text="${vm.getUserName()}"></p>
                                                     </div>
                                                 </div>
+
                                             </div>
                                         </button>
                                         <div class="menu">
